@@ -61,6 +61,19 @@
 .list-connection .list-item+.list-item {
   margin-left: 50px;
 }
+/*Бегунок под названием страницы */
+
+.active-page-list::after {
+  content: "";
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 4px;
+  top: 28px;
+  background: var(--accent-color);
+  border-radius: 2px;
+}
+
 .header-box .list-connection {
   margin-left: auto;
   align-items: center;
@@ -186,6 +199,26 @@ h1,h2,h3,h4,h5,h6,ul {
   font-weight: 700;
   line-height: 1.143;
   text-transform: uppercase;
+}
+/* work-section=thumb */
+.work-thumb {
+  position: relative;
+}
+.title-thumb {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 370px;
+  height: 70px;
+  padding: 27px 0 27px 0;
+  background: rgba(47, 48, 58, 0.8);
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.142;
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #ffffff;
 }
 .work.section {
   padding-top: 0;
@@ -407,7 +440,6 @@ h1,h2,h3,h4,h5,h6,ul {
 .list .active-page {
   color: var(--accent-color);
 }
-.title-customers {}
 /* Footer */
 span.color-second {
   color: #ffffff;
