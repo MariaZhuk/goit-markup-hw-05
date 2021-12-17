@@ -62,7 +62,6 @@
   margin-left: 50px;
 }
 /*Бегунок под названием страницы */
-
 .active-page-list::after {
   content: "";
   display: block;
@@ -411,6 +410,39 @@ h1,h2,h3,h4,h5,h6,ul {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12),
   0;
 }
+/* Info-section-card */
+.works-thumb {
+  position: relative;
+}
+.text-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px 63px 24px;
+  margin: 0 0;
+  font-size: 18px;
+  line-height: 1.56;
+  letter-spacing: 0.03em;
+  color: #FFFFFF;
+  opacity: 0;
+}
+.works-thumb:hover .text-thumb {
+  opacity: 1;
+}
+.works-thumb::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color:rgba(33, 150, 243, 0.9);
+  opacity: 0;
+}
+.works-thumb:hover::before {
+  opacity: 1;
+}
+
 .examples-link .examples-name {
   font-weight: 700;
   font-size: 18px;
