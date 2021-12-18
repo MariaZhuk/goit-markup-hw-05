@@ -16,6 +16,8 @@
   --buttom-bg-color-potfolio: #f5f4fa;
   --bg-card-portfolio: #ffffff;
   --color-icon: #AFB1B8;
+  --cubic: cubic-bezier(0.4, 0, 0.2, 1);
+  --time-transition: 250ms
 }
 .page {
   color: var(--primery-text-color);
@@ -89,7 +91,7 @@ span.color-studio {
 }
 /* css-transition */
 .list-item .list-link {
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: color var(--time-transition) var(--cubic);
 }
 
 .list-item .list-link:hover,
@@ -126,11 +128,11 @@ span.color-studio {
 }
 .icon-mail {
   margin-right: 10px;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--time-transition) var(--cubic);
 }
 .icon-phone {
     margin-right: 10px;
-    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: fill var(--time-transition) var(--cubic);
 }
 /* main */
 h1,h2,h3,h4,h5,h6,ul {
@@ -183,7 +185,7 @@ h1,h2,h3,h4,h5,h6,ul {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.2);
   opacity: 1;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--time-transition) var(--cubic);
 }
 .backdrop.is-hidden {
   opacity: 0;
@@ -197,7 +199,7 @@ h1,h2,h3,h4,h5,h6,ul {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(1);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--time-transition) var(--cubic);
   width: 528px;
   height: 581px;
   background-color: #fff;
@@ -225,9 +227,6 @@ h1,h2,h3,h4,h5,h6,ul {
   fill: #000000;
   cursor: pointer;
 }
-
-
-
 /* background color pages */
 .instruments,
 .work,
@@ -368,18 +367,19 @@ h1,h2,h3,h4,h5,h6,ul {
   width: 100%;
   height: 100%;
   color: var(--color-icon);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--time-transition) var(--cubic);
 }
-.icon-team:hover {
+.icon-team:hover,
+.icon-team:focus {
   background-color: var(--accent-color);
 }
 .icon-team svg {
   background-position: center;
   fill: currentColor;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--time-transition) var(--cubic);
 }
 .icon-team:hover svg,
-.icon-team:hover svg {
+.icon-team:focus svg {
   fill: #fff;
 }
 /* Section customers */
@@ -401,7 +401,7 @@ h1,h2,h3,h4,h5,h6,ul {
   border-radius: 4px;
   width: 170px;
   height: 92px;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border-color var(--time-transition) var(--cubic);
 }
 .customers-list-item:not(:last-child) {
   margin-right: 30px;
@@ -416,12 +416,14 @@ h1,h2,h3,h4,h5,h6,ul {
 }
 .customers-list-link svg {
   fill: currentColor;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: fill var(--time-transition) var(--cubic);
 }
-.customers-list-item:hover{
+.customers-list-item:hover,
+.customers-list-item:focus {
   border-color: var(--accent-color);
 }
-.customers-list-item:hover svg {
+.customers-list-link:hover svg,
+.customers-list-link:focus svg {
   fill: var(--accent-color);
 }
 
@@ -448,8 +450,8 @@ h1,h2,h3,h4,h5,h6,ul {
   border: none;
   border-radius: 4px;
   padding: 6px 22px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--time-transition) var(--cubic),
+  color 2var(--time-transition) var(--cubic);
 }
 .list .button:hover,
 .list .button:focus {
@@ -460,7 +462,7 @@ h1,h2,h3,h4,h5,h6,ul {
   display: block;
   text-decoration: none;
   color: var(--primery-text-color);
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow var(--time-transition) var(--cubic);
 }
 .container-works .list {
   flex-wrap: wrap;
@@ -502,10 +504,11 @@ h1,h2,h3,h4,h5,h6,ul {
   opacity: 0;
   background-color:rgba(33, 150, 243, 0.9);
   transform: translateY(100%);
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-  transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--time-transition) var(--cubic),
+  transform var(--time-transition) var(--cubic);
 }
-.examples-link:hover .overlay {
+.examples-link:hover .overlay,
+.examples-link:focus .overlay {
   opacity: 1;
   transform: translateY(0);
 }
@@ -587,7 +590,8 @@ span.color-second {
   margin-left: 0;
   margin-top: 9px;
 }
-.list .contacts:hover {
+.list .contacts:hover,
+.list .contacts:focus {
   color: var(--accent-color);
 }
 /* Invitation-footer */
@@ -614,9 +618,10 @@ span.color-second {
   border-radius: 50%;
   background-color: rgba(255, 255, 255, 0.1);
   fill: #ffffff;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
+  transition: background-color var(--time-transition) var(--cubic);
 }
-.icon-invitation:hover {
+.icon-invitation:hover,
+.icon-invitation:focus {
   background-color: var(--accent-color);
 }
 .invitation-social-link:not(:last-child) {
